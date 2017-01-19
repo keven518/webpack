@@ -53,7 +53,7 @@
 
 	var $ = __webpack_require__(2);
 
-	$('body').html('Hello world');
+	$('body').html('Hello world23322');
 	var kv = 'kv';
 	console.log(kv);
 

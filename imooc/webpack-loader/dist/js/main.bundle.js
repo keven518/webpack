@@ -42,21 +42,17 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	'use strict';
+	import layer from './components/layer/layer.js';
 
-	var _layer = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/layer/layer.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	const App = function () {
+		const NUM = 1;
+		alert(NUM);
+	  console.log(layer);
+	}
 
-	var _layer2 = _interopRequireDefault(_layer);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var App = function App() {
-	  console.log(_layer2.default);
-	};
-
-	new App();
+	new App()
 
 /***/ }
 /******/ ]);

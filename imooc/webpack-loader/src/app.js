@@ -1,6 +1,8 @@
 import layer from './components/layer/layer.js';
 
-var App = function(){
+const App = function () {
+	const NUM = 1;
+	alert(NUM);
   console.log(layer);
 }
 

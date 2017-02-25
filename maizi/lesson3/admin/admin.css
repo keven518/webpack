@@ -1,0 +1,7 @@
+body{
+  background: url(../images/bj.png);
+  color: #fff;
+}
+h1:before{
+  content: url(../icnos/baby.png);
+}

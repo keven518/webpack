@@ -1,6 +1,8 @@
 var htmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
 
 module.exports = {
+  context: __dirname,
   entry: './src/app.js',
   output: {
     path: './dist',
@@ -11,14 +13,23 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel',
-        exclude: './node_modules/',
-        include: './src/',
+        include: path.resolve(__dirname, 'src'),
+        exclude: path.resolve(__dirname, 'node_modules'),
         query: {
           presets: ['latest']
         }
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader?importLoaders=1!postcss-loader'
       }
     ]
   },
+  postcss: [
+    require('autoprefixer')({
+      broswers: ['last 5 versions']
+    })
+  ],
   plugins: [
     new htmlWebpackPlugin({
       filename: 'index.html',

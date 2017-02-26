@@ -20,8 +20,31 @@ module.exports = {
         }
       },
       {
+        test: /\.html$/,
+        loader: 'html-loader'
+      },
+      {
+        test: /\.tpl$/,
+        loader: 'ejs-loader'
+      },
+      {
         test: /\.css$/,
         loader: 'style-loader!css-loader?importLoaders=1!postcss-loader'
+      },
+      {
+        test: /\.less$/,
+        loader: 'style!css!postcss!less'
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css!postcss!sass'
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/i,
+        loaders: [
+          'url-loader?limit=10000&name=assets/[name]-[hash:5].[ext]',
+          'image-webpack'
+        ]
       }
     ]
   },
